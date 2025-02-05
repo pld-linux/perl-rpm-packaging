@@ -1,0 +1,11 @@
+--- perl-rpm-packaging-1.1/scripts/perl.req~	2025-02-05 19:40:44.000000000 +0100
++++ perl-rpm-packaging-1.1/scripts/perl.req	2025-02-05 20:00:27.886663997 +0100
+@@ -87,7 +87,7 @@
+ foreach my $module (sort grep length, keys %require) {
+   if (length($require{$module}) == 0) {
+     print "perl($module)\n";
+-    print "perln($module)\n" if !$perln;
++    print "perln($module)\n" if $perln;
+   } else {
+ 
+     # I am not using rpm3.0 so I do not want spaces around my

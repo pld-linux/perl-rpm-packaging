@@ -3,7 +3,7 @@ Summary(de.UTF-8):	Zusatzwerkzeuge fürs Nachsehen Perl-Abhängigkeiten in RPM-P
 Summary(pl.UTF-8):	Dodatkowe narzędzia do sprawdzenia zależności skryptów Perla w pakietach RPM
 Name:		perl-rpm-packaging
 Version:	1.1
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Base
 Source0:	https://github.com/rpm-software-management/perl-rpm-packaging/archive/v%{version}/%{name}-%{version}.tar.gz
@@ -12,6 +12,7 @@ Source1:	perl.prov
 Patch0:		rpm-perl-macros.patch
 Patch1:		rpm-perl-req-perlfile.patch
 Patch2:		rpm-perl_req-INC_dirs.patch
+Patch3:		fix-reverse-condition.patch
 URL:		https://github.com/rpm-software-management/perl-rpm-packaging
 BuildRequires:	rpm-build >= 4.6
 Requires:	perl-Encode
@@ -41,6 +42,7 @@ pakietach RPM.
 %patch -P0 -p1
 %patch -P1 -p1
 %patch -P2 -p0
+%patch -P3 -p1
 
 install %{SOURCE1} scripts/perl.prov
 
