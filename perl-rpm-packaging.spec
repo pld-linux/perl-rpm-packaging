@@ -3,7 +3,7 @@ Summary(de.UTF-8):	Zusatzwerkzeuge fürs Nachsehen Perl-Abhängigkeiten in RPM-P
 Summary(pl.UTF-8):	Dodatkowe narzędzia do sprawdzenia zależności skryptów Perla w pakietach RPM
 Name:		perl-rpm-packaging
 Version:	1.1
-Release:	3
+Release:	4
 License:	GPL v2
 Group:		Base
 Source0:	https://github.com/rpm-software-management/perl-rpm-packaging/archive/v%{version}/%{name}-%{version}.tar.gz
