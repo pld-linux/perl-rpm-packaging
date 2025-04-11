@@ -1,0 +1,19 @@
+--- perl-rpm-packaging-1.1/scripts/perl.req.orig	2025-04-11 17:39:49.058273534 +0200
++++ perl-rpm-packaging-1.1/scripts/perl.req	2025-04-11 17:40:40.051330614 +0200
+@@ -98,13 +98,13 @@ foreach my $module (sort grep length, ke
+     $v =~ s/^v//;
+     if($normalversion)
+     {
+-      print "perl($module) = $normv\n";
++      print "perl($module) >= $normv\n";
+     }
+     else
+     {
+-      print "perl($module) = $require{$module}\n";
++      print "perl($module) >= $require{$module}\n";
+     }
+-    print "perln($module) = $normv\n" if $perln;
++    print "perln($module) >= $normv\n" if $perln;
+   }
+ }
+ 
