@@ -1,0 +1,13 @@
+# recognise "use Foo();" and "use Foo" with arguments on the next line;
+# same fix as Fedora perl-generators, https://github.com/jplesnik/generators
+--- perl-rpm-packaging-1.3/scripts/perl.req.orig
++++ perl-rpm-packaging-1.3/scripts/perl.req
+@@ -295,7 +295,7 @@
+         (m/^(\s*)         # we hope the inclusion starts the line
+          (require|use)\s+(?!\{)     # do not want 'do {' loops
+          # quotes around name are always legal
+-         ['"]?([\w:\.\/]+?)['"]?[\t; ]
++         ['"]?([\w:\.\/]+?)['"]?(?:[\t;( ]|$)
+          # the syntax for 'use' allows version requirements
+          # the latter part is for "use base qw(Foo)" and friends special case
+          \s*($modver_re|(qw\s*[(\/'"]\s*|['"])[^)\/"'\$]*?\s*[)\/"'])?

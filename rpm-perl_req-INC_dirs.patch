@@ -1,6 +1,6 @@
---- scripts/perl.req~	2004-04-16 13:27:10.000000000 +0200
-+++ scripts/perl.req	2004-04-26 23:54:42.128568344 +0200
-@@ -39,9 +39,18 @@
+--- scripts/perl.req~
++++ scripts/perl.req
+@@ -56,9 +56,18 @@
    }
  }
  
@@ -21,14 +21,14 @@
        if (! m=(/(doc|man|info|usr/src)/|\.(so|ph|h|html|pod)$)=) {
          process_file($_) if -f;
        }
-@@ -53,7 +64,9 @@
+@@ -73,7 +82,9 @@
  foreach $perlver (sort keys %perlreq) {
    print "perl >= $perlver\n";
  }
+-foreach $module (sort keys %require) {
 +print "$_\n" for sort grep $inc{$_}, keys %inc;
 +
--foreach $module (sort keys %require) {
 +foreach my $module (sort grep length, keys %require) {
    if (length($require{$module}) == 0) {
      print "perl($module)\n";
-     print "perln($module)\n" if !$perln;
+     print "perln($module)\n" if $perln;
